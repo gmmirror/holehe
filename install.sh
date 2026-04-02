@@ -60,6 +60,10 @@ if [[ -d "${PREFIX}/opt/holehe" ]]; then
     command rm -rf "${PREFIX}/opt/holehe"
 fi
 
+if [[ -x "${PREFIX}/bin/holehe" ]]; then
+    command rm -f "${PREFIX}/bin/holehe"
+fi
+
 command git clone --depth 1 \
     'https://github.com/megadose/holehe' \
     "${PREFIX}/opt/holehe"
