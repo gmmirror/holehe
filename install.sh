@@ -7,6 +7,11 @@ function for_termux() {
     cd "${PREFIX}/opt/holehe"
     command pip install --upgrade pip setuptools wheel
     command pip install .
+
+    if ! command python3 -c 'import requests'; then
+        command pip install requests
+    fi
+
     cd
 }
 
@@ -16,6 +21,11 @@ function for_linux() {
     source "holehe_venv/bin/activate"
     command pip install --upgrade pip setuptools wheel
     command pip install .
+
+    if ! command python3 -c 'import requests'; then
+        command pip install requests
+    fi
+
     deactivate
     cd
 
